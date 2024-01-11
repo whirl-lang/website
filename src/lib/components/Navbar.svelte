@@ -1,9 +1,11 @@
-<div class="navbar bg-base-100">
-	<div class="flex-1">
-		<a class="btn btn-ghost text-xl">Whirl</a>
+<div class="navbar bg-base-100 h-190 p-0">
+	<div class="flex-1 h-30">
+		<a href="/" class="pl-4">
+			<img class="btn btn-ghost h-190 w-190" src="../whirl_logo.png">
+		</a>
 	</div>
 
-	<div>
+	<div class="flew-1 gap-16 pr-16">
 		<a href="/install">Install</a>
 		<a href="/learn">Learn</a>
 		<a href="/docs">Docs</a>
