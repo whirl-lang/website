@@ -1,6 +1,6 @@
-<div class="navbar bg-base-100 h-190 p-0">
+<div class="navbar bg-base-100 h-190">
 	<div class="flex-1 h-30">
-		<a href="/" class="pl-4">
+		<a href="/home" class="pl-4">
 			<img class="btn btn-ghost h-190 w-190" src="../whirl_logo.png">
 		</a>
 	</div>
