@@ -8,8 +8,5 @@
   <div class="flew-1 gap-16 pr-16">
     <a href="/install">Install</a>
     <a href="/learn">Learn</a>
-    <a href="/docs">Docs</a>
-    <a href="/docs">Playground</a>
-    <a href="/docs">Tools</a>
   </div>
 </div>

@@ -18,7 +18,7 @@
       <pre data-prefix="$"><code
           >whirl &lt;PATH&gt;</code
         ></pre>
-      <pre><code>Arguements:</code></pre>
+      <pre><code>Arguments:</code></pre>
       <pre data-prefix="$"><code>&lt;PATH&gt;   Path to the script to execute</code></pre>
       <pre ><code></code></pre>
       <pre ><code>Options:</code></pre>
