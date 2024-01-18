@@ -8,5 +8,6 @@
   <div class="flew-1 gap-16 pr-16">
     <a href="/install">Install</a>
     <a href="/learn">Learn</a>
+    <a href="/forum/home">Forum</a>
   </div>
 </div>
