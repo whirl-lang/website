@@ -1,43 +1,44 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
 }
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 model User {
-  id           Int    @id @unique
-  name         String @unique
-  auth_session Session[]
-  key          Key[]
+    id           Int       @id
+    name         String    @unique
+    auth_session Session[]
+    key          Key[]
+    Post         Post[]
 }
 
 model Session {
-  id             String @id @unique
-  user_id        String
-  active_expires BigInt
-  idle_expires   BigInt
-  user           User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
+    id             Int    @id
+    active_expires BigInt
+    idle_expires   BigInt
+    user           User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+    userId         Int
 
-  @@index([user_id])
+    @@index([userId])
 }
 
 model Key {
-  id              String  @id @unique
-  hashed_password String?
-  user_id         String
-  user            User    @relation(references: [id], fields: [user_id], onDelete: Cascade)
+    id              Int     @id
+    hashed_password String?
+    user            User    @relation(references: [id], fields: [userId], onDelete: Cascade)
+    userId          Int
 
-  @@index([user_id])
+    @@index([userId])
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  title     String   @db.VarChar(255)
-  body     String   @db.VarChar(255)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+    id        String   @id @default(uuid()) @db.Uuid
+    createdAt DateTime @default(now())
+    title     String   @db.Text
+    body      String   @db.Text
+    author    User?    @relation(fields: [authorId], references: [id])
+    authorId  Int?
 }
