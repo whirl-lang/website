@@ -8,8 +8,8 @@ generator client {
 }
 
 model User {
-  id           String    @id @unique
-
+  id           Int    @id @unique
+  name         String @unique
   auth_session Session[]
   key          Key[]
 }
@@ -31,4 +31,13 @@ model Key {
   user            User    @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String   @db.VarChar(255)
+  body     String   @db.VarChar(255)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
 }
