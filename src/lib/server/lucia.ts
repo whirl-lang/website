@@ -11,8 +11,8 @@ const client = new PrismaClient();
 export const auth = lucia({
 	adapter: prisma(client, {
 		user: 'user',
-		session: 'user_session',
-		key: 'user_key'
+		session: 'session',
+		key: 'key'
 	}),
 	middleware: sveltekit(),
 	env: dev ? 'DEV' : 'PROD',
