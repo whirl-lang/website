@@ -9,6 +9,7 @@ export const load: PageServerLoad = async (event) => {
 		return redirect(304, "/forum/login");
 	}
     return {
+        // use to display posts
         posts: []
     }
 };
@@ -16,6 +17,7 @@ export const load: PageServerLoad = async (event) => {
 export const actions: Actions = {
 	default: async (event) => {
 		if (!event.locals.session) {
+            // use to create posts
 			throw fail(401);
 		}
 		// ...
