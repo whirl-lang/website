@@ -9,7 +9,6 @@ export const actions: Actions = {
     const formData = await request.formData();
     const username = formData.get("username");
     const password = formData.get("password");
-    console.log(username, password);
 
     if (
       typeof username !== "string" ||

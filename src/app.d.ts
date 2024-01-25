@@ -5,7 +5,7 @@ declare global {
 		// interface Error {}
 		interface Locals {
 			auth: import('lucia').AuthRequest;
-		}
+			session: import('lucia').Session;		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
@@ -17,7 +17,6 @@ declare global {
 		type DatabaseUserAttributes = {
 			username: string
 		};
-		type DatabaseUserAttributes = Record<string, never>;
 	}
 }
 
