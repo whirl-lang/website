@@ -56,6 +56,6 @@ export const actions: Actions = {
         message: (e as Error).message,
       });
     }
-    return redirect(302, "/forum");
+    return redirect(302, "/forum/home");
   },
 };
