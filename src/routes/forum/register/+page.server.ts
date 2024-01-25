@@ -2,6 +2,7 @@ import { auth } from "$lib/server/lucia";
 import { fail, redirect } from "@sveltejs/kit";
 
 import type { Actions } from "./$types";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 
 export const actions: Actions = {
   default: async ({ request, locals }: any) => {
@@ -45,7 +46,8 @@ export const actions: Actions = {
       });
       locals.auth.setSession(session);
     } catch (e) {
-      if (e instanceof Error && e.message === "23505") {
+      console.log(e);
+      if (e instanceof PrismaClientKnownRequestError && e.code === "P2002") {
         return fail(400, {
           message: "Username already exists",
         });
