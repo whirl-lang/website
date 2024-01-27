@@ -1,4 +1,4 @@
-import { auth } from "../../../../server/lucia";
+import { auth } from "$lib/server/lucia";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
@@ -20,12 +20,36 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-  createPost: async (event) => {
-    if (!event.locals.session) {
+  create: async ({ locals, request }) => {
+    console.log("done");
+    if (locals.session) {
       // use to create posts
-      throw fail(401);
-    }
-    // ...
+      const formData = await request.formData();
+      const title = formData.get("title")?.toString();
+      const body = formData.get("body")?.toString();
+      if (!title) {
+        return fail(400, {
+          message: "Invalid title",
+        });
+      }
+      if (!body) {
+        return fail(400, {
+          message: "Invalid body",
+        });
+      }
+      console.log("createpost");
+      const createpost = await prisma.post.create({
+        data: {
+          title,
+          body,
+          authorId: locals.session.user.userId,
+        },
+        select: {
+          id: true,
+        },
+      });
+      return redirect(303, "/forum/home");
+    } // ...
   },
   logout: async ({ locals }) => {
     const session = await locals.auth.validate();

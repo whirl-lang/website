@@ -5,18 +5,19 @@ declare global {
 		// interface Error {}
 		interface Locals {
 			auth: import('lucia').AuthRequest;
-			session: import('lucia').Session;		}
+			session: import('lucia').Session | null;
+		}
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
 	}
-}
-declare global {
+
 	namespace Lucia {
 		type Auth = import('$lib/server/lucia').Auth;
 		type DatabaseUserAttributes = {
 			username: string
 		};
+		type DatabaseSessionAttributes = {};
 	}
 }
 
