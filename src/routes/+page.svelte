@@ -15,7 +15,7 @@ onMount(() => {
 {#if ready}
 <div class="">
   <div class="grid place-items-center" in:fade={{ delay: 250, duration: 800 }}>
-    <p class="text-7xl p-16 text-black font-bold">
+    <p class="text-7xl lg:p-16 p-8 text-black font-bold">
       Welcome to <strong class="text-[#5b289b] ">Whirl</strong>
     </p>
     <p class="hero pb-16 pl-8 pr-8 text-black font-medium">
