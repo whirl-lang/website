@@ -12,10 +12,10 @@
 
 <div class="flex p-2 min-h-screen flex-col items-center gap-5">
   <div class="p-6 rounded-md lg:w-1/2 w-full h-fit bg-[#1b2538] flex">
-    <button on:click={toggle} class="w-32"> Create Post </button>
+    <button on:click={toggle} class="w-32 hover:text-white"> Create Post </button>
     <div class="w-full"></div>
     <form method="post" action="?/logout">
-      <button type="submit"> Logout </button>
+      <button type="submit" class="hover:text-white"> Logout </button>
     </form>
   </div>
   {#if visible}

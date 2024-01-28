@@ -6,8 +6,8 @@
   </div>
 
   <div class="flew-1 gap-x-10 pr-16">
-    <a href="/install">Install</a>
-    <a href="/learn">Learn</a>
-    <a href="/forum/home">Forum</a>
+    <a class="hover:text-black" href="/install">Install</a>
+    <a class="hover:text-black" href="/learn">Learn</a>
+    <a class="hover:text-black" href="/forum/home">Forum</a>
   </div>
 </div>
