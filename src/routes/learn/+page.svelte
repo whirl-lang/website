@@ -40,18 +40,18 @@
           <span>    <span class="text-indigo-400">printf</span>&#40;<span
                 class="text-blue-400">"x is neither 1 nor 2"</span
               >&#41;&#59;
-            }</span>
+            }</span
+            >
             </span></span
-        ></code>
+        ></code
+      >
       </pre>
   </div>
   <h1 class="text-5xl pb-8 pt-16">Functions</h1>
   <div class="mockup-code bg-black text-white">
     <pre>
         <code>
-            proc <span class="text-indigo-400"
-          >main</span
-        >() :: int &#123;
+            proc <span class="text-indigo-400">main</span>() :: int &#123;
                 escape <span class="text-blue-400">0</span>;
             }
         </code>

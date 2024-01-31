@@ -2,7 +2,6 @@
   import { fade } from "svelte/transition";
   import { fly } from "svelte/transition";
   import { quintOut } from "svelte/easing";
-  import { browser } from "$app/environment";
   import { onMount } from "svelte";
 
 let ready = false;
