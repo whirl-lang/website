@@ -1,7 +1,7 @@
 <div class="navbar bg-white h-190 shadow-xl">
   <div class="flex-1 h-30">
     <a href="/" class="lg:pl-4">
-      <img class="btn btn-ghost min-w-fit pl-0 pr-0" src="../whirl_logo.png" />
+      <img class="btn btn-ghost min-w-fit pl-0 pr-0" src="../whirl_logo.png" alt="Whirl logo"/>
     </a>
   </div>
 
