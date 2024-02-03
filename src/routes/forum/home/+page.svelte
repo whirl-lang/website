@@ -45,7 +45,7 @@
       </form>
     </div>
   {/if}
-  <div data-testid="posts">
+  <div data-testid="posts" class="flex w-full flex-col items-center gap-2">
     {#await data.posts}
       Loading...
     {:then posts}
